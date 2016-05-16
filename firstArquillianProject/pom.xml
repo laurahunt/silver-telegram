@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.arquillian.project1</groupId>
-  <artifactId>firstArquillianProject</artifactId>
+  <artifactId>firstArquillianProjcet</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -42,6 +42,26 @@
     	<artifactId>maven-surefire-plugin</artifactId>
    		<version>2.17</version>
 	  </plugin>
+
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-pmd-plugin</artifactId>
+		<version>3.6</version>
+		<configuration>
+			<linkXRef>true</linkXRef>
+			<sourceEncoding>UTF-8</sourceEncoding>
+			<minimumTokens>100</minimumTokens>
+			<targetJdk>1.7</targetJdk>
+		</configuration>
+		<executions>
+			<execution>
+				<goals>
+					<goal>check</goal>
+					<goal>pmd</goal>
+				</goals>
+			</execution>
+		</executions>
+</plugin>
     </plugins>
   </build>
   <dependencies>
@@ -87,6 +107,6 @@
 	    <artifactId>arquillian-junit-container</artifactId>
 	    <scope>test</scope>
 	</dependency>
-	   
+	  
 	  </dependencies>
 </project>
